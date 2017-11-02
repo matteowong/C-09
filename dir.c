@@ -43,7 +43,7 @@ void print_dir(char * path) {
   struct dirent * entry;
   printf("Directories:\n");
   while (entry=readdir(d)) {
-    if (entry->d_type==DT_DIR)
+    if (entry->d_type==DT_DIR || entry->d_type==DT_CHR)
       printf("%s\n",entry->d_name);
   }
   closedir(d);
